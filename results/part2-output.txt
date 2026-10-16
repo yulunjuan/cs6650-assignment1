@@ -1,0 +1,48 @@
+C:\Users\allen\.jdks\ms-11.0.32.1\bin\java.exe "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2025.2.1\lib\idea_rt.jar=63885" -Dfile.encoding=UTF-8 -classpath D:\NEU\CS6650\Assignment\Assignment1\client-part2\target\classes;C:\Users\allen\.m2\repository\com\google\code\gson\gson\2.10.1\gson-2.10.1.jar client.Main http://16.146.250.174:8080/ski-servlet 200
+Server: http://16.146.250.174:8080/ski-servlet, main phase threads: 200
+Single-thread avg RTT: 26.37 ms
+Little's Law prediction: warmup (32 threads) = 1213 req/s, main (200 threads) = 7584 req/s
+
+===== Ingest Path =====
+Successful swipes:   500000
+Failed swipes:       0
+Retries:             0
+Connection errors:   0
+Warmup:  32 threads, 27174 ms, 1178 swipes/s
+Main:    200 threads, 61825 ms, 7570 swipes/s
+Total wall time: 88999 ms
+Overall throughput: 5618 swipes/s
+HTTP connections: 1 shared HttpClient for ingest (HTTP/1.1 keep-alive pool), 1 separate HttpClient for WebSockets
+
+===== Subscribe Path =====
+Resort  1: 179 updates, connect 93 ms, 0 reconnections
+Resort  2: 178 updates, connect 72 ms, 0 reconnections
+Resort  3: 178 updates, connect 42 ms, 0 reconnections
+Resort  4: 178 updates, connect 45 ms, 0 reconnections
+Resort  5: 178 updates, connect 50 ms, 0 reconnections
+Resort  6: 178 updates, connect 46 ms, 0 reconnections
+Resort  7: 178 updates, connect 45 ms, 0 reconnections
+Resort  8: 178 updates, connect 55 ms, 0 reconnections
+Resort  9: 178 updates, connect 43 ms, 0 reconnections
+Resort 10: 178 updates, connect 54 ms, 0 reconnections
+
+===== Performance Analysis =====
+Ingest latency (n=500000): mean=25.95, median=24, p95=37, p99=57, min=0, max=1075 (ms)
+Throughput per resort:
+  Resort  1: 50202 swipes, 564 swipes/s
+  Resort  2: 49867 swipes, 560 swipes/s
+  Resort  3: 49840 swipes, 560 swipes/s
+  Resort  4: 50397 swipes, 566 swipes/s
+  Resort  5: 50036 swipes, 562 swipes/s
+  Resort  6: 49970 swipes, 561 swipes/s
+  Resort  7: 50024 swipes, 562 swipes/s
+  Resort  8: 49774 swipes, 559 swipes/s
+  Resort  9: 49934 swipes, 561 swipes/s
+  Resort 10: 49956 swipes, 561 swipes/s
+Push latency (n=1781): mean=34.17, median=29, p95=50, p99=175, min=26, max=304 (ms)
+Total leaderboard updates delivered: 1781
+Note: push latency includes clock skew between client and server clocks.
+
+CSV files written to D:\NEU\CS6650\Assignment\Assignment1\results
+
+Process finished with exit code 0

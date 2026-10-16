@@ -1,0 +1,30 @@
+C:\Users\allen\.jdks\ms-11.0.32.1\bin\java.exe "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2025.2.1\lib\idea_rt.jar=60397" -Dfile.encoding=UTF-8 -classpath D:\NEU\CS6650\Assignment\Assignment1\client-part1\target\classes;C:\Users\allen\.m2\repository\com\google\code\gson\gson\2.10.1\gson-2.10.1.jar client.Main http://16.146.250.174:8080/ski-servlet 200
+Server: http://16.146.250.174:8080/ski-servlet, main phase threads: 200
+Single-thread avg RTT: 29.66 ms
+Little's Law prediction: warmup (32 threads) = 1079 req/s, main (200 threads) = 6743 req/s
+
+===== Ingest Path =====
+Successful swipes:   500000
+Failed swipes:       0
+Retries:             594
+Connection errors:   594
+Warmup:  32 threads, 26038 ms, 1229 swipes/s
+Main:    200 threads, 102645 ms, 4559 swipes/s
+Total wall time: 128683 ms
+Overall throughput: 3886 swipes/s
+HTTP connections: 1 shared HttpClient (HTTP/1.1 keep-alive pool)
+
+===== Subscribe Path =====
+Resort  1: 258 updates, connect 70 ms, 0 reconnections
+Resort  2: 258 updates, connect 43 ms, 0 reconnections
+Resort  3: 258 updates, connect 48 ms, 0 reconnections
+Resort  4: 258 updates, connect 48 ms, 0 reconnections
+Resort  5: 258 updates, connect 56 ms, 0 reconnections
+Resort  6: 258 updates, connect 54 ms, 0 reconnections
+Resort  7: 258 updates, connect 43 ms, 0 reconnections
+Resort  8: 258 updates, connect 51 ms, 0 reconnections
+Resort  9: 258 updates, connect 39 ms, 0 reconnections
+Resort 10: 258 updates, connect 39 ms, 0 reconnections
+Total leaderboard updates: 2580, mean push latency: 6718.6 ms
+
+Process finished with exit code 0
