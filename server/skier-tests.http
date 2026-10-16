@@ -1,0 +1,48 @@
+### 1. Valid GET → 200
+GET http://localhost:8080/ski-servlet/skiers/1/seasons/2019/days/1/skiers/123
+
+### 2. Missing parameters
+GET http://localhost:8080/ski-servlet/skiers/
+
+### 3. Invalid structure → 400
+GET http://localhost:8080/ski-servlet/skiers/1/invalid/2019
+
+### 4. Valid POST → 201
+POST http://localhost:8080/ski-servlet/skiers/1/seasons/2019/days/1/skiers/123
+Content-Type: application/json
+
+{"time": 217, "liftID": 21}
+
+### 5. Invalid JSON type → 400
+POST http://localhost:8080/ski-servlet/skiers/1/seasons/2019/days/1/skiers/123
+Content-Type: application/json
+
+{"time": "invalid", "liftID": 21}
+
+### 6. Empty body → 400
+POST http://localhost:8080/ski-servlet/skiers/1/seasons/2019/days/1/skiers/123
+Content-Type: application/json
+
+### 7. [Assignment] liftID out of range → 400
+POST http://localhost:8080/ski-servlet/skiers/1/seasons/2019/days/1/skiers/123
+Content-Type: application/json
+
+{"time": 217, "liftID": 41}
+
+### 8. [Assignment] time out of range → 400
+POST http://localhost:8080/ski-servlet/skiers/1/seasons/2019/days/1/skiers/123
+Content-Type: application/json
+
+{"time": 0, "liftID": 21}
+
+### 9. [Assignment] negative ID in URL → 400
+POST http://localhost:8080/ski-servlet/skiers/-1/seasons/2019/days/1/skiers/123
+Content-Type: application/json
+
+{"time": 217, "liftID": 21}
+
+### 10. Health check -> 200
+GET http://localhost:8080/ski-servlet/health
+
+### 11. WebSocket leaderboard subscription
+WEBSOCKET ws://localhost:8080/ski-servlet/leaderboard/7
